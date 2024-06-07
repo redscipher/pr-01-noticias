@@ -6,7 +6,7 @@
 }
 
 /*elementos: pais*/
-body, header, footer {
+body, footer {
     font-family: "Benne", serif;
     font-style: normal;
     font-size: 20px;
@@ -21,56 +21,42 @@ section {
     margin: 20px;
 }
 
-/*elementos: filhos diretos -> pais*/
-body > header, body > footer {
-    padding: 10px;
-    opacity: 0.7;
-    /*cores*/
-    background-color: #232324d3;
-    color: #fffb03;
-    /*configuracoes da fonte*/
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 22px;
-    font-style: normal;
-}
-
-body > footer {
-    font-family: "Anton", cursive;
-    font-size: 16px;
-    font-style: normal;
-    color: #f6f5ee;
-}
-
 body > main {
     padding: 20px;
 }
 
 /*elementos: filhos diretos -> nivel 1*/
-body > header h1, body > footer p {
-    margin-left: 22px;
-}
-
-/*elementos: nivel 2*/
-header nav li {
-    display: inline;
-    /*configuracoes*/
-    margin-right: 10px;
-}
-
-/*elementos: nivel 3*/
-header nav li a {
-    color: #d6dbdde7;
-    /*exibicao*/
-    text-decoration: dotted;
-    /*fonte*/
-    font-size: 18px;
+body > footer p {
+    margin-left: 24px;
 }
 
 /*classes: raiz*/
-.clsRaiz {
+.Cls_div_raiz {
+    /*tamanho da caixa padrao*/
     width: 1366px;
     width: 100%;
+    /*margens padrao*/
     margin: 0 auto;
+}
+
+.cls_div_cabecalho
+,.cls_div_rodape {
+    /*display p/ exibicao dos itens a frente um do outro*/
+    display: flex;
+    /*propriedade p/ nao deixar criar rolamento p/ direita*/
+    flex-wrap: wrap;
+    align-items: center;
+    /*adiciona espacamento entre eles*/
+    justify-content: space-between;
+    /*cor de fundo do cabecalho*/
+    background-color: #545454b0;
+    color: #bcbcbcd8;
+    /*tamanho*/
+    height: 80px;
+}
+
+.cls_div_rodape {
+    height: 50px;
 }
 
 .clsArtigos {
@@ -100,6 +86,30 @@ header nav li a {
 }
 
 /*elementos de classes: pais*/
+.cls_div_cabecalho h1 {
+    margin-left: 10px;
+    /*fontes*/
+    font-size: 44px;
+    color: #bcbcbcf4;
+    /*posicao*/
+    position: relative;
+    top: 0;
+    left: 40%
+    /*estilos
+    border: 1px dashed #bcbcbcd8;*/
+}
+
+.cls_div_rodape p {
+    margin-left: 10px;
+     /*fontes*/
+    font-size: 18px;
+    color: #bcbcbcf4;
+    /*posicao*/
+    position: relative;
+    top: 0;
+    left: 40%
+}
+
 .clsArtigos article {
     width: 50%;
     /*aparencia*/
@@ -126,7 +136,26 @@ header nav li a {
     background-color: #2c2c2c22;
 }
 
+/*elementos de classes: nivel 1*/
+.cls_div_cabecalho li {
+    /*display na mesma linha porem block
+        se exceder o numero de itens, pula p/ linha abaixo*/
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /*elementos de classes: nivel 2*/
+.cls_div_cabecalho li a {
+    color: #bcbcbcec;
+    /*linha abaixo como link*/
+    text-decoration: none;
+    /*tamanho fonte*/
+    font-size: 18px;
+    /*margem*/
+    margin-right: 10px;
+}
+
 .clsFormulario form div label {
     margin-right: 50px;
 }
@@ -174,9 +203,27 @@ header nav li a {
 }
 
 /*classes de elementos: pais*/
-header .clsRaiz {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+header .cls_div_cabecalho
+,footer .cls_div_rodape {
+    /*configurando a caixa do cabecalho inteiro*/
+    padding: 10px;
+    margin: 1px 1px;
+    /*aplicando bordas arredondas*/
+    border-radius: 5px;
+    /*fonte do cabecalho*/
+    font-family: "Benne", serif;
+    font-weight: 400;
+    font-style: normal;
+    /*opacidade*/
+    opacity: 0.8;
+    /* exemplos p/ aplicar desfoque:
+        1 - box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            ( com duas propriedades )
+        2-  backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.5);*/
+    
+}
+
+footer .cls_div_rodape {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
