@@ -6,32 +6,14 @@
 }
 
 /*elementos: pais*/
-body, footer {
+body {
+    /*fonte estilizacao*/
     font-family: "Benne", serif;
     font-style: normal;
     font-size: 20px;
-}
-
-body {
+    /*cor de fundo*/
     background-color: #383839;
     color: #f6f5ee;
-}
-
-section {
-    margin: 20px;
-}
-
-body > main {
-    padding: 20px;
-}
-
-/*elementos: filhos diretos -> nivel 1*/
-body > footer p {
-    margin-left: 24px;
-}
-
-/*classes: raiz*/
-.Cls_div_raiz {
     /*tamanho da caixa padrao*/
     width: 1366px;
     width: 100%;
@@ -39,6 +21,20 @@ body > footer p {
     margin: 0 auto;
 }
 
+/*misto - classes + elementos de classe: pais*/
+.reddit-mono
+,.cls_secoes_raiz h3 {
+  font-family: "Reddit Mono", monospace;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 24px;
+  /*opacidade*/
+  opacity: 0.7;
+  /*margens*/
+  margin: 20px auto;
+}
+
+/*classes: raiz*/
 .cls_div_cabecalho
 ,.cls_div_rodape {
     /*display p/ exibicao dos itens a frente um do outro*/
@@ -48,28 +44,68 @@ body > footer p {
     align-items: center;
     /*adiciona espacamento entre eles*/
     justify-content: space-between;
+    /*fonte do cabecalho*/
+    font-family: "Reddit Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
     /*cor de fundo do cabecalho*/
-    background-color: #545454b0;
-    color: #bcbcbcd8;
-    /*tamanho*/
-    height: 80px;
+    background-color: #505050d7;
+    color: #cbcbc9;
+     /*configurando a caixa do cabecalho inteiro*/
+     padding: 5px 5px;
+     border: 5px 5px;
+     margin: 0 0;
+     /*aplicando bordas arredondas*/
+     border-radius: 5px;
+     /*opacidade*/
+     opacity: 0.8;
+     /* exemplos p/ aplicar desfoque:
+         1 - box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+             ( com duas propriedades )
+         2-  backdrop-filter: blur(8px);
+             background-color: rgba(255, 255, 255, 0.5);*/
 }
 
 .cls_div_rodape {
-    height: 50px;
+    font-family: "Anton", sans-serif;
+    font-size: 20px;
 }
 
-.clsArtigos {
-    display: flex;
+.cls_secoes_raiz {
+    display: block;
     align-items: center;
     justify-content: space-between;
 }
 
-.clsFormulario {
+.cls_artigos {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /*imagem + artigo ocuparam 100 % da tela*/
+    width: 100%;
+}
+
+.cls_div_artigos {
+    /*tamanho que os artigos ocuparam na tela: titulo, conteudo e o link*/
+    width: 50%;
+    /*margens*/
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+.cls_sec_formularios {
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cls_entradas {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /*== fontes*/
@@ -89,7 +125,7 @@ body > footer p {
 .cls_div_cabecalho h1 {
     margin-left: 10px;
     /*fontes*/
-    font-size: 44px;
+    font-size: 24px;
     color: #bcbcbcf4;
     /*posicao*/
     position: relative;
@@ -102,41 +138,9 @@ body > footer p {
 .cls_div_rodape p {
     margin-left: 10px;
      /*fontes*/
-    font-size: 18px;
     color: #bcbcbcf4;
-    /*posicao*/
-    position: relative;
-    top: 0;
-    left: 40%
 }
 
-.clsArtigos article {
-    width: 50%;
-    /*aparencia*/
-    margin-bottom: 16px;
-}
-
-.clsArtigos img {
-    width: 500;
-    /*aparencia*/
-    height: 400px;
-}
-
-.clsArtigos p {
-    font-size: 18px;
-}
-
-.clsFormulario label {
-    display: inline-block;
-    /*aparencia*/
-    width: 30px;
-}
-
-#sctContato {
-    background-color: #2c2c2c22;
-}
-
-/*elementos de classes: nivel 1*/
 .cls_div_cabecalho li {
     /*display na mesma linha porem block
         se exceder o numero de itens, pula p/ linha abaixo*/
@@ -145,85 +149,78 @@ body > footer p {
     justify-content: space-between;
 }
 
-/*elementos de classes: nivel 2*/
+.cls_div_cabecalho ul {
+    /*margin dos links a direita*/
+    margin-right: 10px;
+    /*define display formato de grid, com 3 colunas*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+}
+
+.cls_artigos img {
+    width: 50%;
+    height: 400px;
+}
+
+.cls_div_artigos a {
+    color: #5b5effe4;
+}
+
+.cls_entradas input {
+    margin: 10px 10px;
+    width: 70%;
+    height: 30px;
+}
+
+.cls_botoes button {
+    margin: 10px 20px;
+    height: 30px;
+    width: 40%;
+    /*configura exibicao botoes*/
+    display: inline-block;
+    justify-content: space-between;
+    /*bordas arrendondas*/
+    border-radius: 20px;
+    box-shadow: none;
+    /*cores*/
+    background-color: #1f1f7f9b;
+    color: #cbcbc9;
+}
+
+.cls_sec_formularios form {
+     /*configuracao p/ o tamanho das entradas, ocuparam apenas 30% do tamanho total da tela*/
+     width: 30%;
+}
+
+/*estados*/
+.cls_div_artigos a:hover {
+    color: #f2eb87ec;
+}
+
+.cls_botoes button:hover {
+    background-color: #18189dcf;
+}
+
+.cls_entradas input:focus {
+    outline-color: #18189dcf;
+}
+
+/*elementos de classes: nivel 1*/
 .cls_div_cabecalho li a {
     color: #bcbcbcec;
     /*linha abaixo como link*/
     text-decoration: none;
-    /*tamanho fonte*/
-    font-size: 18px;
+    /*fonte*/
+    font-weight: bold;
+    font-size: 16px;
     /*margem*/
     margin-right: 10px;
 }
 
-.clsFormulario form div label {
-    margin-right: 50px;
-}
-
-.clsFormulario form div input {
-    font-size: 16px;
-    width: 670px;
-}
-
-.clsFormulario form div button {
-    /*configuracoes aparencia*/
-    background-color: #c0c0c4d3;
-    color: #f2fbff;
-    border: none;
-    cursor: pointer;
-    /*fonte*/
-    font-size: 16px;
-    /*margens*/
-    margin-left: 5px;
-    width: 370px;
-    height: 30px;
-}
-
 /*>estados*/
-.clsFormulario form div input:focus {
-    outline-color: #c0c0c4cc;
-}
-
-.clsFormulario form div button:hover {
-    background-color: #c0c0c495;
-}
-
-/*elementos classes: filhos direto - pais*/
-.clsArtigos > div {
-    display: inline-block;
-    align-content: center;
-    /*margens*/
-    margin-left: 20px;
-    margin-right: 20px
-}
-
-/*elementos classes: filhos direto - nivel 1*/
-.clsArtigos > div a {
-    color: #fffb03d6;
-}
-
-/*classes de elementos: pais*/
-header .cls_div_cabecalho
-,footer .cls_div_rodape {
-    /*configurando a caixa do cabecalho inteiro*/
-    padding: 10px;
-    margin: 1px 1px;
-    /*aplicando bordas arredondas*/
-    border-radius: 5px;
-    /*fonte do cabecalho*/
-    font-family: "Benne", serif;
-    font-weight: 400;
-    font-style: normal;
-    /*opacidade*/
-    opacity: 0.8;
-    /* exemplos p/ aplicar desfoque:
-        1 - box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            ( com duas propriedades )
-        2-  backdrop-filter: blur(8px);
-            background-color: rgba(255, 255, 255, 0.5);*/
-    
-}
-
-footer .cls_div_rodape {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.cls_div_cabecalho li a:hover {
+    color: #f2eb87ec;
+    /*linha abaixo como link*/
+    text-decoration: underline;
 }
