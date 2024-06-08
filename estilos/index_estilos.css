@@ -108,6 +108,12 @@ body {
     justify-content: space-between;
 }
 
+.cls_links_sociais {
+    position: relative;
+    top: 0;
+    right: 20%
+}
+
 /*== fontes*/
 .benne-regular {
     font-family: "Benne", serif;
@@ -126,7 +132,7 @@ body {
     margin-left: 10px;
     /*fontes*/
     font-size: 24px;
-    color: #bcbcbcf4;
+    color: #ffe14df4;
     /*posicao*/
     position: relative;
     top: 0;
@@ -193,6 +199,15 @@ body {
      width: 30%;
 }
 
+.cls_links_sociais img {
+    height: 24px;
+}
+
+.cls_links_sociais li {
+    display: inline;
+    margin-right: 8px;
+}
+
 /*estados*/
 .cls_div_artigos a:hover {
     color: #f2eb87ec;
@@ -216,6 +231,10 @@ body {
     font-size: 16px;
     /*margem*/
     margin-right: 10px;
+}
+
+.cls_links_sociais li a {
+    text-decoration: none;
 }
 
 /*>estados*/
