@@ -92,6 +92,8 @@ body {
     /*margens*/
     padding: 10px 10px;
     margin: 10px 10px;
+    /*fonte*/
+    font-size: 18px;
 }
 
 .cls_sec_formularios {
