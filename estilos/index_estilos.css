@@ -14,11 +14,14 @@ body {
     /*cor de fundo*/
     background-color: #383839;
     color: #f6f5ee;
-    /*tamanho da caixa padrao*/
-    width: 1366px;
-    width: 100%;
-    /*margens padrao*/
-    margin: 0 auto;
+}
+
+/* elementos > elementos */
+body > header
+,body > footer{
+    /*cor de fundo do cabecalho*/
+    background-color: #505050d7;
+    color: #cbcbc9;
 }
 
 /*misto - classes + elementos de classe: pais*/
@@ -35,13 +38,21 @@ body {
 }
 
 /*classes: raiz*/
+.container{
+    /*tamanho da caixa padrao*/
+    max-width: 1024px;
+    width: 100%;
+    /*margens padrao*/
+    margin: 0 auto;
+}
+
 .cls_div_cabecalho
 ,.cls_div_rodape {
     /*display p/ exibicao dos itens a frente um do outro*/
     display: flex;
     /*propriedade p/ nao deixar criar rolamento p/ direita*/
     flex-wrap: wrap;
-    align-items: center;
+    /* align-items: center; */
     /*adiciona espacamento entre eles*/
     justify-content: space-between;
     /*fonte do cabecalho*/
@@ -49,13 +60,9 @@ body {
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
-    /*cor de fundo do cabecalho*/
-    background-color: #505050d7;
-    color: #cbcbc9;
      /*configurando a caixa do cabecalho inteiro*/
      padding: 5px 5px;
      border: 5px 5px;
-     margin: 0 0;
      /*aplicando bordas arredondas*/
      border-radius: 5px;
      /*opacidade*/
@@ -132,15 +139,10 @@ body {
 /*elementos de classes: pais*/
 .cls_div_cabecalho h1 {
     margin-left: 10px;
+    margin-top: 8px;
     /*fontes*/
     font-size: 24px;
     color: #ffe14df4;
-    /*posicao*/
-    position: relative;
-    top: 0;
-    left: 40%
-    /*estilos
-    border: 1px dashed #bcbcbcd8;*/
 }
 
 .cls_div_rodape p {
@@ -182,15 +184,11 @@ body {
 }
 
 .cls_botoes button {
-    margin: 10px 20px;
+    margin: 8px 8px;
     height: 30px;
     width: 40%;
-    /*configura exibicao botoes*/
-    display: inline-block;
-    justify-content: space-between;
     /*bordas arrendondas*/
     border-radius: 20px;
-    box-shadow: none;
     /*cores*/
     background-color: #1f1f7f9b;
     color: #cbcbc9;
@@ -244,4 +242,49 @@ body {
     color: #f2eb87ec;
     /*linha abaixo como link*/
     text-decoration: underline;
+}
+
+/* responsividades */
+@media (max-width: 723px) or ((min-width: 724px) and (max-width:1023px)){
+    /* elementos */
+    section{
+        margin: 16px;
+    }
+
+    /* classes */
+    .cls_artigos {
+        flex-direction: column;
+    }
+
+    .cls_secoes_raiz {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .cls_div_artigos{
+        width: 90%;
+    }
+
+    .cls_artigos img {
+        width: 90%;
+    }
+
+    .cls_sec_formularios{
+        width: 100%;
+    }
+
+    .cls_sec_formularios form {
+        /*configuracao p/ o tamanho das entradas, ocuparam apenas 30% do tamanho total da tela*/
+        width: 50%;
+   }
+
+   @media (max-width: 723px){
+        .cls_sec_formularios form
+        ,.cls_links_sociais {
+            /*configuracao p/ o tamanho das entradas, ocuparam apenas 30% do tamanho total da tela*/
+            width: 100%;
+            text-align: center;
+        }
+   }
 }
