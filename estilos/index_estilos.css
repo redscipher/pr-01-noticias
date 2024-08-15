@@ -16,6 +16,10 @@ body {
     color: #f6f5ee;
 }
 
+img{
+    border-radius: 50%;
+}
+
 /* elementos > elementos */
 body > header
 ,body > footer{
